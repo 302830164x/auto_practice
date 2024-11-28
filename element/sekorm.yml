@@ -1,0 +1,3 @@
+搜索框: /html/body/div[1]/div[1]/div[1]/div/div[1]/div[2]/div/form/div/input
+搜索按钮: /html/body/div[1]/div[1]/div[1]/div/div[1]/div[2]/div/form/input[12]
+登录按钮: /html/body/div[1]/div[1]/div[1]/div/div[2]/ul/li/div/a[2]
