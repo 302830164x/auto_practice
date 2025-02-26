@@ -1,5 +1,4 @@
 import configparser
-from distutils.command.config import config
 
 from util.config import cm
 

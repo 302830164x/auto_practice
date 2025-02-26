@@ -1,3 +1,5 @@
+from time import sleep
+
 import selenium
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException, InvalidArgumentException
@@ -29,10 +31,21 @@ class BasePage():
         ele = self.wait.until(EC.presence_of_element_located((By.XPATH, element)))
         return ele
 
-    def is_click(self, element):
+    # def element_move_to_center(self, element):  # 滑动滑动轮将元素移动到页面中央
+    #     ele = self.find_element(element)
+    #     self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+
+    def is_click(self, element):    # 还可以使用鼠标点击，js模拟点击
         self.find_element(element).click()
+        sleep(0.2)
 
     def send_element(self, element, value):
-        self.find_element(element).send_keys(value)
+        ele = self.find_element(element)
+        ele.clear()
+        ele.send_keys(value)
 
-
+    def getvalue(self, element):
+        ele = self.find_element(element)
+        if ele.is_displayed():
+            text1 = ele.text
+        return text1
